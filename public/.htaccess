@@ -1,5 +1,6 @@
 RewriteEngine On
 
+# Please read first the .htaccess file in the parent directory
 # To redirect a subdomain to a subdir because of https not supporting wildcards
 # replace values between <> with your ones
 # RewriteCond %{HTTP_HOST} ^<OSPOS subdomain>\.<my web domain>\.com$ [OR]
@@ -11,10 +12,10 @@ RewriteEngine On
 # RewriteCond %{HTTP_HOST} !^www\..+$ [NC]
 # RewriteCond %{HTTP_HOST} (.+)$ [NC]
 # RewriteRule ^(.*)$ http://www.%1/$1 [R=301,L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
 # if in web root
-RewriteRule ^(.*)$ index.php?/$1 [L]
+# RewriteRule ^(.*)$ index.php?/$1 [L]
 
 # if in subdir comment above line, uncomment below one and replace <OSPOS path> with your path
 # RewriteRule ^(.*)$ /<OSPOS path>/public/index.php?/$1 [L]
